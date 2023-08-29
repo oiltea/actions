@@ -23,6 +23,7 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
+        cache: maven
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
 
     - name: Build with Maven
@@ -31,4 +32,4 @@ jobs:
     - name: Publish to GitHub Packages Apache Maven
       run: mvn --batch-mode deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.token }}
+        GITHUB_TOKEN: '3aba726a69db46388ec4588d8de09d67' # ${{ secrets.TOKEN }}
